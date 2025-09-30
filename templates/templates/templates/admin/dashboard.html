@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Панель управления</h2>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Пациенты</h5>
+                <p class="card-text display-4">{{ stats.patients }}</p>
+                <a href="{{ url_for('patients') }}" class="btn btn-light">Управление</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Врачи</h5>
+                <p class="card-text display-4">{{ stats.doctors }}</p>
+                <a href="{{ url_for('doctors') }}" class="btn btn-light">Управление</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Приёмы</h5>
+                <p class="card-text display-4">{{ stats.appointments }}</p>
+                <a href="{{ url_for('appointments') }}" class="btn btn-light">Управление</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Сегодня</h5>
+                <p class="card-text display-4">{{ stats.today_appointments }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <h4>Быстрый доступ</h4>
+    <a href="{{ url_for('add_patient') }}" class="btn btn-outline-primary">+ Новый пациент</a>
+    <a href="{{ url_for('add_doctor') }}" class="btn btn-outline-success">+ Новый врач</a>
+    <a href="{{ url_for('add_appointment') }}" class="btn btn-outline-warning">+ Новый приём</a>
+</div>
+{% endblock %}
