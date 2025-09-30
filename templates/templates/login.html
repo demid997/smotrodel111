@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Вход в админку{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Админ-панель поликлиники</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-control") }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control") }}
+                    </div>
+                    {{ form.submit(class="btn btn-primary w-100") }}
+                </form>
+                <div class="mt-3 text-muted">
+                    <small>Логин: <code>admin</code>, Пароль: <code>admin123</code> (смените после входа!)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
